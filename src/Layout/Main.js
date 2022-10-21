@@ -9,7 +9,6 @@ import Home from '../Pages/Home/Home';
 
 
 const Main = () => {
-
     return (
         <div>
             <Header></Header>

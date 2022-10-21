@@ -2,13 +2,14 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import { Link } from 'react-router-dom';
 import LeftSidebar from '../LeftSidebar/LeftSidebar';
 
 const Header = () => {
     return (
-        <Navbar collapseOnSelect expand="lg" bg="info" variant="dark">
+        <Navbar collapseOnSelect expand="lg" bg="info" variant="dark" className='mb-3' >
             <Container>
-                <Navbar.Brand href="#home">Dragon News</Navbar.Brand>
+                <Navbar.Brand> <Link to='/home'>Dragon News</Link></Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
