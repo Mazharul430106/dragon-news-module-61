@@ -2,6 +2,7 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import LeftSidebar from '../LeftSidebar/LeftSidebar';
 
 const Header = () => {
     return (
@@ -20,6 +21,12 @@ const Header = () => {
                             Dank memes
                         </Nav.Link>
                     </Nav>
+
+                    <div className='d-lg-none'>
+                        <LeftSidebar></LeftSidebar>
+                    </div>
+
+
                 </Navbar.Collapse>
             </Container>
         </Navbar>
