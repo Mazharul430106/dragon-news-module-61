@@ -60,13 +60,13 @@ const Header = () => {
                             <div className='d-flex align-items-center'>
                                 {
                                     user?.photoURL ?
-                                        <Image src={user?.photoURL} roundedCircle style={{ height: '30px' }}></Image>
+                                        <Image src={user?.photoURL} roundedCircle style={{ height: '30px'}}></Image>
                                         :
                                         <FaUser></FaUser>
                                 }
                             </div>
                         </Nav.Link>
-                        
+
                     </Nav>
                     <div className='d-lg-none'>
                         <LeftSidebar></LeftSidebar>
