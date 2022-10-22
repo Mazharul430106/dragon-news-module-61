@@ -7,8 +7,6 @@ const Home = () => {
     const allNews = useLoaderData();
     return (
         <div>
-            <h1>{allNews?.length}</h1>
-
             {
                 allNews?.map(news=> <NewsDetails key={news._id} news={news}></NewsDetails>)
             }
