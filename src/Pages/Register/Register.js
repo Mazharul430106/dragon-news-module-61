@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
@@ -6,6 +6,8 @@ import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 const Register = () => {
 
     const {createUser} = useContext(AuthContext);
+    const [error, setError] = useState('');
+    const [success, setSuccess] = useState('');
 
     const handleSubmitFormRegister = (event)=>{
         event.preventDefault();
@@ -20,12 +22,16 @@ const Register = () => {
         .then((result)=>{
             const user = result.user;
             form.reset();
+            setSuccess('Successfully Registerd');
+            setError('');
             console.log(user);
         })
         .catch((error)=>{
             console.error('error',error);
+            setSuccess('');
+            setError(error.message);
         })
-        
+
     }
 
     return (
@@ -50,9 +56,17 @@ const Register = () => {
                 <Form.Control type="password" name='password' placeholder="Password" required />
             </Form.Group>
 
+            <Form.Group className="text-success" controlId="formBasicCheckbox">
+                {success}
+            </Form.Group>
+            <Form.Group className="text-danger" controlId="formBasicCheckbox">
+                {error}
+            </Form.Group>
+
             <Form.Group className="mb-3" controlId="formBasicCheckbox">
                 <Form.Check type="checkbox" name='checkbox' label="Check me out" />
             </Form.Group>
+
             <Button variant="primary" type="submit">
                 Register
             </Button>
